@@ -2,30 +2,35 @@
 using namespace std;
 
 
-int fact(int n)
+int fib(int n)
 {
 
-    if(n==0 || n==1)
+    if(n==0)
+    {return 0;}
+    if(n==1)
+    {
+        return 1;
+    }
+    else if(n==2)
     {
         return 1;
     }
     else{
-
-        return n*fact(n-1);
+        return fib(n-1)+fib(n-2);
     }
-
-
-
 
 }
 int main()
 {
 
-    int n =0;
+    int n;
 
     cin>>n;
 
-    cout<<fact(n); //should print 120
+    for(int i=0;i<n;i++)
+    {
+        cout<<fib(i)<<" ";
+    }
 
     return 0;
 }
